@@ -17,3 +17,5 @@ python kalkulator_gui.py
 ##Technology:
 1. Python
 2. Tkinter
+
+Note: This is just simple project and for individual purpose
