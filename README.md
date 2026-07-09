@@ -5,6 +5,7 @@ Welcome to the first python project of rumiarashii:
 ##Feature
 1. Simple and basic GUI
 2. Operator(+, -, *, /)
+3. Support operator (=, Del, AC)
 
 ##How to use it
 1. Make sure already installed Python
