@@ -4,6 +4,7 @@ jendela = tk.Tk()
 
 jendela.title("Kalkulator Rumi!")
 jendela.geometry("400x400")
+jendela.configure(bg="#1e1e2e")
 
 angka = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0]
 
@@ -15,7 +16,9 @@ layar = tk.Entry(
     font=("Arial", 24),
     justify="right",
     borderwidth=2,
-    relief="solid"
+    relief="solid",
+    bg="#181825",
+    fg="#cdd6f4"
 )
 layar.grid(row=0, column=0, columnspan=3, padx=10, pady=20)
 
@@ -55,6 +58,8 @@ tombol_result = tk.Button(
         width=5,
         height=2,
         font=("Arial", 18),
+        bg="#FF5733",
+        fg="white",
 
         command=hitung
 )
@@ -66,10 +71,15 @@ tombol_del = tk.Button(
         width=5,
         height=2,
         font=("Arial", 18),
+        bg="#f38ba8",
+        fg="#cdd6f4",
 
         command = del_ditekan
 )
 tombol_del.grid(row=4, column=1)
+
+tombol_del.bind("<Enter>", lambda e: tombol_del.config(bg="#cdd6f4"))
+tombol_del.bind("<Leave>", lambda e: tombol_del.config(bg="#f38ba8"))
 
 for index, item in enumerate(symbol):
     tombol_symbol = tk.Button(
@@ -78,6 +88,8 @@ for index, item in enumerate(symbol):
         width=5,
         height=2,
         font=("Arial", 18),
+        bg="#89b4fa",
+        fg="#cdd6f4",
 
         command=lambda i=item:tombol_ditekan(i)
     )
@@ -91,6 +103,8 @@ for index, item in enumerate(angka):
         width=5,
         height=2,
         font=("Arial", 18),
+        bg="#313244",
+        fg="#cdd6f4",
         
         command=lambda i=item:tombol_ditekan(i)
     )
