@@ -32,12 +32,19 @@ def clear():
     tombol_del.config(text="Del", command=del_ditekan)
 
 def hitung():
-    isi = layar.get().replace("x", "*")
-    hasil = eval(isi)
-    layar.delete(0, "end")
+    try:
+        isi = layar.get().replace("x", "*")
+        hasil = eval(isi)
+        layar.delete(0, "end")
+        layar.insert("end", str(hasil))
+    except ZeroDivisionError:
+        layar.delete(0, "end")
+        layar.insert("end", "Error!, Zero divison")
+    except:
+        layar.delete(0, "end")
+        layar.insert("end", "Error!, Incorrect Syntax")
 
-    layar.insert("end", str(hasil))
-
+  
     tombol_del.config(text="AC", command=clear)
 
 
